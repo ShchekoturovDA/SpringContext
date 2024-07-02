@@ -6,8 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-@AllArgsConstructor
 public class Cat {
-    String name;
-
+    private String name = "Nikolay";
 }

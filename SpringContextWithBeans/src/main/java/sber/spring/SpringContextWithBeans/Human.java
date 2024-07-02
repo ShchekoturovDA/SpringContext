@@ -8,10 +8,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-@AllArgsConstructor
 public class Human {
+    private String name = "Vasil'";
+    @Autowired
     private Parrot parrot1;
+    @Autowired
     private Parrot parrot2;
+    @Autowired
     private Cat cat;
+    @Autowired
     private Dog dog;
 }

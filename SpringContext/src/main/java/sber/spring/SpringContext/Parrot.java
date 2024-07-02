@@ -6,9 +6,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("Prototype")
+@Scope("prototype")
 @Data
-@AllArgsConstructor
 public class Parrot {
-    String name;
+    private String name = "Georgiy";
 }

@@ -6,8 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-@AllArgsConstructor
 public class Dog {
-    String name;
+    private String name = "Max";
 
 }
