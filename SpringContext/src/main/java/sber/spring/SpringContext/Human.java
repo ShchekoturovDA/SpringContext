@@ -10,12 +10,16 @@ import org.springframework.stereotype.Component;
 @Data
 public class Human {
     private String name = "Vasil'";
-    @Autowired
     private Parrot parrot1;
-    @Autowired
     private Parrot parrot2;
-    @Autowired
     private Cat cat;
-    @Autowired
     private Dog dog;
+
+    public Human(Parrot parrot1, Parrot parrot2, Cat cat, Dog dog){
+        this.parrot1 = parrot1;
+        this.parrot2 = parrot2;
+        this.cat = cat;
+        this.dog = dog;
+    }
+
 }

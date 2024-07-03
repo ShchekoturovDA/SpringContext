@@ -13,9 +13,20 @@ public class SpringContextApplicationTests {
 	private ApplicationContext applicationContext;
 
 	@Test
-	public void contextLoads() {
+	public void checkComponents() {
 		Human human = applicationContext.getBean(Human.class);
-		Assert.assertEquals("Georgiy", human.getParrot2().getName());
+		Human human1 = new Human(new Parrot(), new Parrot(), new Cat(), new Dog());
+		Assert.assertEquals(human1, human);
+	}
+
+	@Test
+	public void checkPrototype() {
+		Human human = applicationContext.getBean(Human.class);
+		human.getParrot2().setName("Lexiy");
+		Assert.assertEquals(new Parrot(), human.getParrot1());
+		Parrot testParrot = new Parrot();
+		testParrot.setName("Lexiy");
+		Assert.assertEquals(testParrot, human.getParrot2());
 	}
 
 }
